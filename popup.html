@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahibinden İlan Analiz Aracı</title>
+    <style>
+        body {
+            width: 320px;
+            min-height: 200px;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 16px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .info-text {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4CAF50;
+        }
+
+        .status-dot.inactive {
+            background: #ccc;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #45a049, #3d8b40);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .version {
+            text-align: center;
+            color: #999;
+            font-size: 11px;
+            margin-top: 12px;
+        }
+
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .success {
+            color: #155724;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>İlan Analiz Aracı</h1>
+    </div>
+
+    <div class="content">
+        <div class="info-box">
+            <div class="info-title">Durum</div>
+            <div class="status" id="extension-status">
+                <div class="status-dot" id="status-dot"></div>
+                <span id="status-text">Kontrol ediliyor...</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title">Nasıl Kullanılır?</div>
+            <div class="info-text">
+                1. Sahibinden.com'da bir vasıta ilanına girin<br>
+                2. "İlanı Analiz Et" butonuna tıklayın<br>
+                3. ALIN/ALMAYIN önerisini alın<br>
+                4. Pazarlık önerilerini değerlendirin
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title">Özellikler</div>
+            <div class="info-text">
+                • Alım-satım karar desteği<br>
+                • Pazarlık önerileri<br>
+                • Hasar durumu analizi<br>
+                • Fiyat değerlendirmesi
+            </div>
+        </div>
+
+        <button class="btn" id="open-tab-btn">Sahibinden.com'a Git</button>
+        
+        <div id="message-area"></div>
+
+        <div class="version">
+            v1.0 - Sahibinden İlan Analiz Aracı
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
