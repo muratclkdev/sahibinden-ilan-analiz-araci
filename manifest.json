@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Sahibinden İlan Analiz Aracı",
+  "version": "1.1",
+  "description": "Sahibinden.com'daki vasıta ilanlarını AI ile analiz eder",
+  
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["*://*.sahibinden.com/ilan/vasita-*"],
+      "js": ["config.js", "content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["test-data-extraction.html"],
+      "matches": ["*://*.sahibinden.com/*"]
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "İlan Analiz Et"
+  }
+}
